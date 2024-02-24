@@ -1,0 +1,35 @@
+// app global css in SCSS form
+
+::-webkit-scrollbar {
+  background-color: none;
+  width: 0px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+  background-color: none;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+  background-color: none;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.my-title-xl {
+  font-size: 5rem !important;
+  font-weight: 500 !important;
+}
+
+.my-subtitle {
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+}
+.my-body {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
