@@ -21,15 +21,24 @@
 }
 
 .my-title-xl {
-  font-size: 5rem !important;
+  font-size: 5em !important;
   font-weight: 500 !important;
 }
 
 .my-subtitle {
-  font-size: 1.5rem !important;
+  font-size: 1.5em !important;
   font-weight: 500 !important;
 }
+
 .my-body {
-  font-size: 1rem !important;
+  font-size: 1em !important;
   font-weight: 400 !important;
+}
+
+@media (max-width: $breakpoint-md-max) {
+  .my-title-xl {
+    font-size: 3em !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+  }
 }

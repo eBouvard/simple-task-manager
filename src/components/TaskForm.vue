@@ -1,5 +1,5 @@
 <template>
-  <q-card style="width: 52vh">
+  <q-card>
     <q-form @submit="addTask">
       <q-card-section class="q-pa-md">
         <div class="my-subtitle">Add a new task</div>

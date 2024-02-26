@@ -2,7 +2,6 @@
   <q-table
     class="sticky-header-table"
     title-class="my-title"
-    style="height: 52vh"
     :columns="columns"
     :rows="tasks"
     row-key="id"
@@ -167,7 +166,7 @@ const emptyLocalStorage = () => {
 <style lang="sass">
 .sticky-header-table
   /* height or max-height is important */
-  height: 52vh
+  height: 50vh
 
   .q-table__top,
   .q-table__bottom,

@@ -38,7 +38,6 @@ export default configure((/* ctx */) => {
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
-      'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
       'material-icons-outlined',
     ],
@@ -84,6 +83,8 @@ export default configure((/* ctx */) => {
     framework: {
       config: {},
 
+      cssAddon: true,
+
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
 
@@ -100,7 +101,14 @@ export default configure((/* ctx */) => {
 
     // animations: 'all', // --- includes all animations
     // https://v2.quasar.dev/options/animations
-    animations: 'all',
+    animations: [
+      'tada',
+      'fadeOut',
+      'slideInLeft',
+      'slideInDown',
+      'slideInUp',
+      'slideInRight',
+    ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#sourcefiles
     // sourceFiles: {

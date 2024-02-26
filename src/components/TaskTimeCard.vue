@@ -1,50 +1,54 @@
 <template>
-  <div class="task-card-container square50 relative-position">
-    <Transition
-      name="tada-and-fade-out"
-      appear
-      enter-active-class="animated tada slower"
-      leave-active-class="animated fadeOut slow"
-      style="z-index: 5"
-    >
-      <q-card
-        v-show="notificationInProgress"
-        class="bg-white square50 absolute flex flex-center"
+  <q-responsive :ratio="1">
+    <div class="task-card-container relative-position">
+      <Transition
+        name="tada-and-fade-out"
+        appear
+        enter-active-class="animated tada slower"
+        leave-active-class="animated fadeOut slow"
+        style="z-index: 5"
       >
-        <q-card class="success-card smaller-square50" flat>
+        <q-card
+          v-show="notificationInProgress"
+          class="bg-white absolute flex flex-center fit"
+        >
+          <q-card class="success-card smaller-square" flat>
+            <q-card-section
+              v-if="notificationInProgress"
+              class="full-height full-width flex"
+            >
+              <div class="remaining-time self-center" style="color: white">
+                Good Job !
+              </div>
+            </q-card-section>
+          </q-card>
+        </q-card>
+      </Transition>
+      <q-card
+        v-if="!notificationInProgress"
+        class="bg-white absolute flex flex-center fit"
+        style="z-index: 1"
+      >
+        <q-card :class="`bg-${backgroundColor} smaller-square`" flat>
           <q-card-section
-            v-if="notificationInProgress"
-            class="full-height full-width flex"
+            class="full-height column justify-between items-center"
           >
-            <div class="remaining-time self-center" style="color: white">
-              Good Job !
+            <div class="col-5 q-px-sm flex">
+              <div class="action-text self-center" :style="textColor">
+                {{ actionText }}
+              </div>
             </div>
+            <div class="col-5 flex">
+              <div class="remaining-time self-center" :style="textColor">
+                {{ remainingTimeText }}
+              </div>
+            </div>
+            <div class="col-2"></div>
           </q-card-section>
         </q-card>
       </q-card>
-    </Transition>
-    <q-card
-      v-if="!notificationInProgress"
-      class="bg-white square50 absolute flex flex-center"
-      style="z-index: 1"
-    >
-      <q-card :class="`bg-${backgroundColor} smaller-square50`" flat>
-        <q-card-section class="full-height column justify-between items-center">
-          <div class="col-5 q-px-sm flex">
-            <div class="action-text self-center" :style="textColor">
-              {{ actionText }}
-            </div>
-          </div>
-          <div class="col-5 flex">
-            <div class="remaining-time self-center" :style="textColor">
-              {{ remainingTimeText }}
-            </div>
-          </div>
-          <div class="col-2"></div>
-        </q-card-section>
-      </q-card>
-    </q-card>
-  </div>
+    </div>
+  </q-responsive>
 </template>
 
 <script setup lang="ts">
@@ -192,14 +196,9 @@ const notifyCompletion = async () => {
 </script>
 
 <style scoped>
-.square50 {
-  height: 52vh;
-  width: 52vh;
-}
-
-.smaller-square50 {
-  height: calc(52vh - 10px);
-  width: calc(52vh - 10px);
+.smaller-square {
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
   box-shadow:
     inset -1px 0px 10px 0px rgba(10, 10, 10, 0.1),
     inset 0px -1px 10px 0px rgba(10, 10, 10, 0.1),
@@ -236,7 +235,7 @@ const notifyCompletion = async () => {
   text-align: center;
   font-family: 'Kode Mono', monospace;
   font-weight: 500;
-  font-size: 2.75rem;
+  font-size: 2.75em;
 }
 
 .remaining-time {
@@ -244,6 +243,6 @@ const notifyCompletion = async () => {
   font-family: 'Kode Mono', monospace;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: 6rem;
+  font-size: 6em;
 }
 </style>
