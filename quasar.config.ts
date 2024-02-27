@@ -96,7 +96,7 @@ export default configure((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['LocalStorage', 'Dialog', 'Notify'],
+      plugins: ['LocalStorage', 'Dialog'],
     },
 
     // animations: 'all', // --- includes all animations
@@ -108,6 +108,7 @@ export default configure((/* ctx */) => {
       'slideInDown',
       'slideInUp',
       'slideInRight',
+      'zoomIn',
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#sourcefiles

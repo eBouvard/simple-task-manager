@@ -25,6 +25,11 @@
   font-weight: 500 !important;
 }
 
+.my-title {
+  font-size: 4em !important;
+  font-weight: 400 !important;
+}
+
 .my-subtitle {
   font-size: 1.5em !important;
   font-weight: 500 !important;
@@ -35,10 +40,15 @@
   font-weight: 400 !important;
 }
 
-@media (max-width: $breakpoint-md-max) {
+@media (max-width: $breakpoint-sm-max) {
   .my-title-xl {
     font-size: 3em !important;
     text-align: center !important;
     font-weight: 500 !important;
+  }
+
+  .my-title {
+    font-size: 2em !important;
+    font-weight: 400 !important;
   }
 }

@@ -49,12 +49,14 @@ const tasksStore = useTasks();
 const title = ref('');
 const duration = ref(0);
 
+const emit = defineEmits(['added']);
 const addTask = () => {
   if (title.value && duration.value > 0) {
     const durationInMs = duration.value * 60 * 1000;
     tasksStore.addTask(title.value, durationInMs);
     title.value = '';
     duration.value = 0;
+    emit('added');
   }
 };
 </script>
