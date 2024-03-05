@@ -24,37 +24,46 @@
     </template>
     <template v-slot:body-cell-actions="rows">
       <q-td class="flex flex-center">
-        <q-btn
-          v-if="rows.row.status === TaskStatus.Pending"
-          @click="startTimer(rows.row.id)"
-          class="q-my-xs"
-          color="green"
-          outline
-          round
-          icon="play_arrow"
-          size="sm"
-        />
-        <q-icon
-          v-else-if="rows.row.status === TaskStatus.Completed"
-          class="q-my-xs"
-          name="check"
-          color="green"
-          size="md"
-        />
-        <q-btn v-else dense flat @click="finishEarly">
-          <q-spinner-clock
-            v-if="rows.row.status === TaskStatus.RunningWork"
-            class="q-my-xs"
-            color="red"
-            size="md"
-          />
-          <q-spinner-clock
-            v-else-if="rows.row.status === TaskStatus.RunningBreak"
-            class="q-my-xs"
-            color="purple"
-            size="md"
-          />
-        </q-btn>
+        <div class="squared_icon_container">
+          <div class="squared_icon">
+            <q-btn
+              v-if="rows.row.status === TaskStatus.Pending"
+              @click="startTimer(rows.row.id)"
+              class="fit q-pa-none q-ma-none extra_border"
+              color="green"
+              outline
+              round
+              icon="play_arrow"
+              size="11px"
+            />
+            <q-icon
+              v-else-if="rows.row.status === TaskStatus.Completed"
+              class="fit"
+              name="check"
+              color="green"
+              size="33px"
+            />
+            <q-btn
+              class="fit q-pa-none q-ma-none"
+              round
+              v-else
+              dense
+              flat
+              @click="finishEarly"
+            >
+              <q-spinner-clock
+                v-if="rows.row.status === TaskStatus.RunningWork"
+                color="red"
+                size="33px"
+              />
+              <q-spinner-clock
+                v-else-if="rows.row.status === TaskStatus.RunningBreak"
+                color="purple"
+                size="33px"
+              />
+            </q-btn>
+          </div>
+        </div>
       </q-td>
     </template>
   </q-table>

@@ -54,7 +54,7 @@ const emptyLocalStorage = () => {
 };
 </script>
 
-<style>
+<style lang="scss">
 .q-table tbody td {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -71,6 +71,21 @@ const emptyLocalStorage = () => {
 .q-table th,
 .q-table td {
   padding: 10px 20px;
+}
+
+.extra_border {
+  border: 1px solid;
+}
+
+.squared_icon_container {
+  height: 40px !important;
+  width: 40px !important;
+  padding: 3.5px !important;
+}
+
+.squared_icon {
+  height: 33px !important;
+  width: 33px !important;
 }
 </style>
 
